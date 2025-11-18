@@ -9,7 +9,7 @@
           (def chafa_cmd @[;~(chafa -f kitty --passthrough tmux --scale max)])
 
           (def command
-            (if (= (path/ext imgpath) ".pdf")
+            (if (has-value? [".pdf" ".svg"] (path/ext imgpath))
               [@[;~(magick ,imgpath -density 300 png:-)] chafa_cmd]
               [(array/push chafa_cmd imgpath)]))
 
