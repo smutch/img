@@ -1,25 +1,26 @@
 # img
 
-Super-simple convenience wrapper for [Chafa](https://github.com/hpjansson/chafa) and [ImageMagick](https://imagemagick.org/) to display images in [TMUX](https://github.com/tmux/tmux) using the Kitty graphics protocol (i.e. when running in [Ghostty](https://ghostty.org/) or [Kitty](https://sw.kovidgoyal.net/kitty/)).
+Super-simple convenience wrapper for [Chafa](https://github.com/hpjansson/chafa) and [ImageMagick](https://imagemagick.org/) to display images using the Kitty graphics protocol (i.e. when running in [Ghostty](https://ghostty.org/) or [Kitty](https://sw.kovidgoyal.net/kitty/)).
+
+It _should_ work over ssh and/or tmux.
 
 ## Requirements
 
-- Janet
 - Chafa
 - ImageMagick
-- TMUX
 - A terminal that supports the Kitty graphics protocol (e.g. Kitty or Ghostty)
 
 ## Install
 
-TODO
+Copy the script somewhere in your PATH and make it executable. e.g.:
+
+```
+  curl -Lo /usr/local/bin/img https://raw.githubusercontent.com/smutch/img/main/img
+  chmod +x /usr/local/bin/img
+```
 
 ## Usage
 
 ```
-  img PATH
-
-=== flags ===
-
-  [--help] : Print this help text and exit
+img <PATH>
 ```

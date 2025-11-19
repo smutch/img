@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+function chafa_cmd() {
+	chafa -t 1 -f kitty --scale max --passthrough tmux --bg white -t 1
+}
+
+ext="${1##*.}"
+if [[ "$ext" == "pdf" || "$ext" == "svg" ]]; then
+	magick -density 300 "$1" png:- | chafa_cmd
+else
+	chafa_cmd "$1"
+fi
